@@ -13,3 +13,7 @@ print(f"The approximate volume is {volume:.2f} liters")
 
 current_date = datetime.now() 
 only_date = current_date.date()
+
+with open("volumes.txt", "a") as file:
+    file.write(f"{only_date}, {width}, {a_ratio}, {diameter}, {volume:.2f}\n")
+
