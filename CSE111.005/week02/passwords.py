@@ -1,4 +1,6 @@
 
+# Handled empty password input
+
 def word_in_file(word, filename, case_sensitive=False):
     with open(filename, "r", encoding="utf-8") as file:
         for line in file:
@@ -41,6 +43,10 @@ def word_complexity(word):
     return complexity
 
 def password_strength(password, min_length=10, strong_length=16):
+    if password == "":
+        print("password cannot be empty")
+        return 0
+    
     if word_in_file(password, "wordlists.txt", False):
         print("Password is a dictionary word and is not secure.")
         return 0
