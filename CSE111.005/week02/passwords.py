@@ -17,3 +17,5 @@ def word_has_character(word, character_list):
             return True
     return False
 
+def word_complexity(word):
+    
