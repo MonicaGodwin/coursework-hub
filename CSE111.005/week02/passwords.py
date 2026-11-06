@@ -36,3 +36,5 @@ def word_complexity(word):
     if func_call_4:
         complexity += 1
     return complexity
+
+    
