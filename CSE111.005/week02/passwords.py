@@ -11,3 +11,9 @@ def word_in_file(word, filename, case_sensitive):
                     return True
         return False
 
+def word_has_character(word, character_list):
+    for ch in word:
+        if ch in character_list:
+            return True
+    return False
+
