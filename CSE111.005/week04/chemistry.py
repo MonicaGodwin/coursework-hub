@@ -1,3 +1,4 @@
+from formula import parse_formula
 def make_periodic_table():
     
     table = {
@@ -109,3 +110,8 @@ def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
         total += atomic_mass * multiplier_index
     return total
 
+def main():
+    user_input1 = input("Enter a chemical formula: ")
+    user_input2 = input("Enter a sample size in grams: ")
+    func_call = make_periodic_table()
+    func_call2 = parse_formula
