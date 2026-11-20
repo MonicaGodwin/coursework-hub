@@ -105,7 +105,7 @@ ATOMIC_MASS_INDEX = 1
 def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
     total = 0
     for item in symbol_quantity_list:
-        atomic_mass = periodic_table_dict[item][ATOMIC_MASS_INDEX]
+        atomic_mass = periodic_table_dict[item[0]][ATOMIC_MASS_INDEX]
         multiplier_index = item[1]      
         total += atomic_mass * multiplier_index
     return total
@@ -113,5 +113,13 @@ def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
 def main():
     user_input1 = input("Enter a chemical formula: ")
     user_input2 = input("Enter a sample size in grams: ")
-    func_call = make_periodic_table()
-    func_call2 = parse_formula
+    periodic_table_func = make_periodic_table()
+    parse_formula_func = parse_formula(user_input1, periodic_table_func)
+    molar_mass_func = compute_molar_mass(parse_formula_func, periodic_table_func)
+    print(molar_mass_func)
+    nums_of_moles =  float(user_input2) / molar_mass_func
+    print(f"Number of moles: {nums_of_moles:.5f}")
+
+if __name__ == "__main__":
+  main()
+
