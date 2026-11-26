@@ -17,7 +17,7 @@ def main():
             reader = csv.reader(file_content)
             next(reader)
 
-            total_item = 0
+            total_items = 0
             subtotal = 0
 
             print("INTERNATIONAL STORE")
@@ -33,13 +33,19 @@ def main():
                 
                 item_cost = price * quantity_convert
 
-                total_item += quantity_convert
+                total_items += quantity_convert
                 subtotal += item_cost
 
                 print(f"{product_name}: {quantity_convert} @ {price:.2f}")
 
                 sales_tax = subtotal * 0.06
                 total = subtotal + sales_tax
+
+            print(f"Number of items: {total_items}")
+            print(f"Subtotal: {subtotal:.2f}")
+            print(f"Sales Tax: {sales_tax:.2f}")
+            print(f"Total: {total:.2f}")
+            print("Thank you for shopping with us!")
     except FileNotFoundError as error:
         print("Error: Missing file.")
         print(error)
