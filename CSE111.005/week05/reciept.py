@@ -21,25 +21,36 @@ def main():
             subtotal = 0
 
             print("INTERNATIONAL STORE")
-        for row in reader:
-            product_num = row[0]
-            quantity = row[1]
+            for row in reader:
+                product_num = row[0]
+                quantity = row[1]
+                quantity_convert = float(quantity)
 
-            product = product_dict[product_num]
+                product = product_dict[product_num]
 
-            product_name = product[1]
-            price = float(product[2])
+                product_name = product[1]
+                price = float(product[2])
+                
+                item_cost = price * quantity_convert
 
-            item_cost = price * quantity
+                total_item += quantity_convert
+                subtotal += item_cost
 
-            total_item += quantity
-            subtotal += item_cost
+                print(f"{product_name}: {quantity_convert} @ {price:.2f}")
 
-            print(f"{product_name}: {quantity} {price:.2f}")
+                sales_tax = subtotal * 0.06
+                total = subtotal + sales_tax
+    except FileNotFoundError as error:
+        print("Error: Missing file.")
+        print(error)
 
-            sales_tax = subtotal * 0.06
-            total = subtotal + sales_tax
+    except PermissionError as error:
+        print("Error: You don't have permission to access this file.")
+        print(error)
 
+    except KeyError as error:
+        print("Error: Unknown product in the customer's request.")
+        print(error)
 
 
 if __name__ == "__main__":
