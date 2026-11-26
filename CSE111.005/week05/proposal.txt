@@ -13,7 +13,7 @@ CSE 111 Proposal for a Student Chosen Program
    answer: CLI Task Tracker
 
 2. What real-world problem will your program address or help to solve?
-   answer: My program will help to Track the users daily routine.
+   answer: Python application that allows users to manage their daily tasks directly from the terminal without a graphical interface.
 
 3. What will you learn from developing this program?
    answer: From this project, I'll learn and master how to read files and also how to use functions to write my program
@@ -30,6 +30,8 @@ CSE 111 Proposal for a Student Chosen Program
    c. display_task function
    d. delete_task function
    e. update_task function 
+   f. summary_task function
+   g. track_progress function
 
     (Remember that the most reusable functions don't get user input and
     don't print results but instead have parameters and return a result.
